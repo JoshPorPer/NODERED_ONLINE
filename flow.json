@@ -1,0 +1,52 @@
+[
+  {
+    "id": "mqttin",
+    "type": "mqtt in",
+    "z": "main",
+    "name": "Potenciómetro",
+    "topic": "josh/potenciometro",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "mqttbroker",
+    "x": 170,
+    "y": 160,
+    "wires": [["gauge", "debug"]]
+  },
+  {
+    "id": "mqttbroker",
+    "type": "mqtt-broker",
+    "name": "HiveMQ",
+    "broker": "broker.hivemq.com",
+    "port": "1883"
+  },
+  {
+    "id": "gauge",
+    "type": "ui_gauge",
+    "z": "main",
+    "name": "Potenciómetro",
+    "group": "defaultgroup",
+    "order": 1,
+    "width": 6,
+    "height": 6,
+    "gtype": "gage",
+    "min": 0,
+    "max": 1023,
+    "wires": []
+  },
+  {
+    "id": "debug",
+    "type": "debug",
+    "name": "Debug"
+  },
+  {
+    "id": "defaultgroup",
+    "type": "ui_group",
+    "name": "Default",
+    "tab": "defaulttab"
+  },
+  {
+    "id": "defaulttab",
+    "type": "ui_tab",
+    "name": "Dashboard"
+  }
+]
